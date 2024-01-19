@@ -52,12 +52,20 @@ kotlin {
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 api(compose.components.resources)
                 api(compose.materialIconsExtended)
+                api(compose.animation)
 
+                //tlaster precompse for navgation and viewmodel
+                api("moe.tlaster:precompose:1.5.10")
+                api("moe.tlaster:precompose-viewmodel:1.5.10")
+
+                //kamel for image loading
+                implementation("media.kamel:kamel-image:0.9.1")
             }
         }
         val androidMain by getting {
             dependencies {
                 implementation("io.ktor:ktor-client-android:$ktorVersion")
+                implementation("com.google.accompanist:accompanist-systemuicontroller:0.33.2-alpha")
             }
         }
         val iosMain by getting {
@@ -78,6 +86,8 @@ kotlin.sourceSets.all {
 android {
     namespace = "com.arslan.starprofileskmm"
     compileSdk = 34
+    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
+    sourceSets["main"].res.srcDirs("src/androidMain/res", "src/commonMain/resources")
     defaultConfig {
         minSdk = 24
     }

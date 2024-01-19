@@ -17,13 +17,13 @@ import kotlinx.coroutines.flow.flowOf
 class StarReposRepositoryImpl constructor(
     private val httpClient: HttpClient
 ) : StarReposRepository {
-    override suspend fun fetchStarRepos(language: String): Flow<ResultState<List<StarRepo?>?>> {
+    override suspend fun fetchStarRepos(language: String): Flow<ResultState<List<StarRepo>?>> {
         return flowOf(
             safeApiCall {
                 val response = httpClient.get(urlString = "search/repositories") {
                     parameter("q", language)
                 }.body<StarReposDto>()
-                response.items?.map { it?.toDomain()
+                response.items?.map { it.toDomain()
                 }
             }
         )

@@ -1,6 +1,6 @@
 package com.arslan.starprofileskmm.di
 
-import com.arslan.starprofileskmm.ui.main.MainViewModel
+import com.arslan.starprofileskmm.ui.screens.main.MainViewModel
 import org.koin.core.Koin
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin

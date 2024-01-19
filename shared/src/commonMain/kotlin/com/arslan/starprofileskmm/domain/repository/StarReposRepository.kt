@@ -7,5 +7,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface StarReposRepository {
     @NativeCoroutines
-    suspend fun fetchStarRepos(language: String) : Flow<ResultState<List<StarRepo?>?>>
+    suspend fun fetchStarRepos(language: String) : Flow<ResultState<List<StarRepo>?>>
 }

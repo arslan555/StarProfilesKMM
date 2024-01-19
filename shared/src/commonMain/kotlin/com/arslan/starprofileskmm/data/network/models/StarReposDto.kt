@@ -11,7 +11,7 @@ data class StarReposDto(
     @SerialName("incomplete_results")
     val incompleteResults: Boolean?,
     @SerialName("items")
-    val items: List<Repo?>?
+    val items: List<Repo>?
 ) {
     @Serializable
     data class Repo(

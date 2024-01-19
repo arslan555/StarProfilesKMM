@@ -2,7 +2,7 @@ package com.arslan.starprofileskmm.di
 
 import com.arslan.starprofileskmm.datasource.StarReposRepositoryImpl
 import com.arslan.starprofileskmm.domain.repository.StarReposRepository
-import com.arslan.starprofileskmm.ui.main.MainViewModel
+import com.arslan.starprofileskmm.ui.screens.main.MainViewModel
 import io.github.aakira.napier.DebugAntilog
 import io.github.aakira.napier.Napier
 import io.ktor.client.HttpClient

@@ -1,4 +1,4 @@
-package com.arslan.starprofileskmm.ui.main
+package com.arslan.starprofileskmm.ui.screens.main
 
 import com.arslan.starprofileskmm.domain.repository.StarReposRepository
 import com.arslan.starprofileskmm.utils.isLoading
