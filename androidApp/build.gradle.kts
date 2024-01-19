@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace = "com.arslan.starprofileskmm.android"
-    compileSdk = 33
+    compileSdk = 34
     defaultConfig {
         applicationId = "com.arslan.starprofileskmm.android"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
     }
@@ -46,4 +46,7 @@ dependencies {
     implementation("androidx.compose.foundation:foundation:1.4.3")
     implementation("androidx.compose.material:material:1.4.3")
     implementation("androidx.activity:activity-compose:1.7.1")
+    implementation("io.insert-koin:koin-android:3.5.3")
+    implementation("io.insert-koin:koin-androidx-compose:3.5.3")
+
 }

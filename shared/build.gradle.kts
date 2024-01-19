@@ -1,9 +1,10 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
-    kotlin("plugin.serialization") version "1.8.21"
+    kotlin("plugin.serialization")
     id("com.google.devtools.ksp")
     id("com.rickclephas.kmp.nativecoroutines")
+    id("org.jetbrains.compose") version "1.5.11"
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -44,6 +45,14 @@ kotlin {
                 implementation("io.insert-koin:koin-compose:1.1.2")
                 //napier for logging
                 implementation("io.github.aakira:napier:2.6.1")
+                //compose
+                api(compose.runtime)
+                api(compose.foundation)
+                api(compose.material3)
+                @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
+                api(compose.components.resources)
+                api(compose.materialIconsExtended)
+
             }
         }
         val androidMain by getting {
@@ -68,7 +77,7 @@ kotlin.sourceSets.all {
 }
 android {
     namespace = "com.arslan.starprofileskmm"
-    compileSdk = 33
+    compileSdk = 34
     defaultConfig {
         minSdk = 24
     }
